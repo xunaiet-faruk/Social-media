@@ -31,44 +31,44 @@ const Navbar = () => {
                     <img src="https://demo.xperthemes.com/sociohub/wp-content/uploads/sites/10/2024/07/sociohub-logo.png" alt="" />
                 </div>
                 <ul className="hidden items-center justify-between gap-10 md:flex">
-                    <li className="group flex  cursor-pointer flex-col hover:text-[#fb5770]">
+                    <li className="group flex  cursor-pointer flex-col font-bold">
                         <NavLink
                             to="/"
                             className={({ isActive, isPending }) =>
-                                isPending ? "text-orange-500 italic underline" : isActive ?  " px-3 py-2 rounded font-bold"
+                                isPending ? "" : isActive ?  " text-orange-500 italic font-bold"
                                     : "text-black px-3 py-2 hover:text-gray-500 transition"
                             }
                         >
                             Home
                         </NavLink><span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-[#fb5770] transition-all duration-300 group-hover:w-full"></span>
                     </li>
-                    <li className="group flex  cursor-pointer flex-col">
+                    <li className="group flex  cursor-pointer flex-col font-bold">
                         <NavLink
-                            to="/"
+                            to="/about"
                             className={({ isActive, isPending }) =>
-                                isPending ? "text-orange-500 italic underline" : isActive ? " px-3 py-2 rounded font-bold"
+                                isPending ? "" : isActive ? "text-orange-500 italic font-bold"
                                     : "text-black px-3 py-2 hover:text-gray-500 transition"
                             }
                         >
                             About
                         </NavLink><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-[#fb5770] transition-all duration-300 group-hover:w-full"></span>
                     </li>
-                    <li className="group flex  cursor-pointer flex-col">
+                    <li className="group flex  cursor-pointer flex-col font-bold">
                         <NavLink
-                            to="/"
+                            to="/media"
                             className={({ isActive, isPending }) =>
-                                isPending ? "text-orange-500 italic underline" : isActive ? " px-3 py-2 rounded font-bold"
+                                isPending ? "" : isActive ? " text-orange-500 italic  font-bold "
                                     : "text-black px-3 py-2 hover:text-gray-500 transition"
                             }
                         >
                             Media
                         </NavLink><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-[#fb5770] transition-all duration-300 group-hover:w-full"></span>
                     </li>
-                    <li className="group flex  cursor-pointer flex-col">
+                    <li className="group flex  cursor-pointer flex-col font-bold">
                         <NavLink
-                            to="/"
+                            to="/message"
                             className={({ isActive, isPending }) =>
-                                isPending ? "text-orange-500 italic underline" : isActive ? " px-3 py-2 rounded font-bold"
+                                isPending ? "" : isActive ? " text-orange-500 italic font-bold"
                                     : "text-black px-3 py-2 hover:text-gray-500 transition"
                             }
                         >

@@ -9,14 +9,11 @@ const Banner = () => {
                 
             }}
         >
-        
-
-           
 
             <div className="max-w-screen-xl mx-auto">
                 <div className="flex justify-center gap-12 pt-20 items-center ">
                     <div className='flex-1'>
-                    <div className='space-y-9'>
+                    <div className='space-y-9 backdrop-blur-xl'>
                             <h1 className="text-7xl font-bold">Creative <span className="text-[#fb5770]"> Pro</span> Social Manager</h1>
                             <p className="text-xl text-gray-600 font-semibold">Torquent optio curae aute, dicta suspendisse eligendi natus! Aliquet accumsan nostrud laborum magnam. Quia nunc explicabo quibusdam eiusmod alias nostra congue wisi.Quisquam proident voluptas.</p>
 
