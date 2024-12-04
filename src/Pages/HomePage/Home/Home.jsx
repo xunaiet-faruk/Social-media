@@ -1,3 +1,4 @@
+import Top from "../Toppost/Top";
 import Banner from "./Banner/Banner";
 import FirstSection from "./FirstSection/FirstSection";
 import Footer from "./Fotter/Footer";
@@ -9,6 +10,7 @@ const Home = () => {
     
         <Banner/>
         <FirstSection/>
+        <Top/>
         
         </>
     );
