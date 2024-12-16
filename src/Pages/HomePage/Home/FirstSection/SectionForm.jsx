@@ -3,40 +3,52 @@ import useaxios from "../../../../Component/Hooks/Useaxios";
 import Swal from "sweetalert2";
 
 const image_hoistiong_key = import.meta.env.VITE_IMAGE_HOISTING;
-const image_upload = `https://api.imgbb.com/1/upload?key=${image_hoistiong_key}`
+const image_upload = `https://api.imgbb.com/1/upload?key=${image_hoistiong_key}`;
+
 const SectionForm = () => {
     const [showName, setShowName] = useState({});
-    const axiosPublic =useaxios()
-    const HandleSubmit = async(e) => {
+    const axiosPublic = useaxios();
+
+    const HandleSubmit = async (e) => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value; 
-        const details = form.details.value; 
-        const imageFile = form.imageFile.files[0]; 
+        const name = form.name.value;
+        const details = form.details.value;
+        const imageFile = form.imageFile.files[0];
         const formdata = new FormData();
-        formdata.append("image",imageFile);
+        formdata.append("image", imageFile);
+        console.log(name, details, imageFile);
+        const formData = { name, details, imageFile };
 
         try {
-            const imageResponse =await axiosPublic.post(image_upload, formdata);
+            const formData = new FormData();
+            formData.append("image", imageFile);
+            const imageResponse = await axiosPublic.post(image_upload, formData);
             const imageUrl = imageResponse.data.data.url;
-            const formInfo = { imageUrl,name,details }
-            const formDatauplaod = await axiosPublic.post('/post',formInfo)
-            console.log(formDatauplaod);
-            if (formDatauplaod.data.insertedId){
+            const formInfo = { name, details, imageUrl };
+            const formDataUpload = await axiosPublic.post('/post', formInfo);
+            console.log("hellow data", formDataUpload);
+
+            if (formDataUpload.data.insertedId) {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "successfully upload your post",
+                    title: "Successfully uploaded your post",
                     showConfirmButton: false,
                     timer: 1500
                 });
+
+                form.reset();
+                setShowName({});
             }
-            form.reset();
-            setShowName({});
         } catch (error) {
             console.log(error);
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong during the upload."
+            });
         }
-   
     };
 
     return (
@@ -108,4 +120,4 @@ const SectionForm = () => {
     );
 };
 
-export default SectionForm;
+export default SectionForm; // Place this at the bottom of the file

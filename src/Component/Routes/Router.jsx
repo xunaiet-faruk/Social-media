@@ -4,6 +4,7 @@ import {
 import Main from "../Layout/Main";
 import Home from "../../Pages/HomePage/Home/Home";
 import Media from "../../Pages/MediaPage/Media";
+import Mediadetails from "../../Pages/MediaPage/Mediadetails";
 
 export const Router = createBrowserRouter([
     {
@@ -17,7 +18,11 @@ export const Router = createBrowserRouter([
             {
                 path:'/media',
                 element:<Media/>
-            }
+            },
+            {
+                path:'/mediaDetails/:id',
+                element:<Mediadetails/>
+            },
         ]
     },
 ]);
